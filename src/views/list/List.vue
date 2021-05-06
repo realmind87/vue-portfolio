@@ -1,5 +1,5 @@
 <template>
-    <div class="list">
+    <div class="list" ref='list'>
         <transition-group name="project-list" tag="ul">
             <li v-for="(project , index) in portfolio" :key="index">
                 <a href="#">{{ project.project_name }}</a>
