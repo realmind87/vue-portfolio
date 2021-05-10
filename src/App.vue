@@ -10,20 +10,17 @@
   </div>
 </template>
 <script>
-
 import Data from '../database/data.json'
-import List from "@/views/list/List"
+import List from "@/views/Grid/GridList";
 export default {
   name: 'App',
   data(){
     return {
-      portfolios : Data
+      portfolios : Data,
     }
   },
   components : {
     List
-  },
-  created(){
   }
 }
 </script>
