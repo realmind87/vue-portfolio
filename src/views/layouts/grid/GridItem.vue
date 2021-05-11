@@ -1,6 +1,6 @@
 <template>
     <li :class="className" :style="style">
-        <a href="#">
+        <a href="#" @click="showProjectDetail(item)">
             <strong class='project_name'>{{ item.project_name }}</strong>
         </a>
     </li>
@@ -55,6 +55,11 @@ export default {
         },
         top(){
             return Math.floor( this.sort / this.rowCount ) * this.cellHeight
+        }
+    },
+    methods : {
+        showProjectDetail(project){
+            this.$EventBus.$emit("showProjectDetail", project)
         }
     }
 }

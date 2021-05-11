@@ -19,7 +19,7 @@
 
 <script>
 import windowSize from '@/mixins/resize.js'
-import GridItem from '@/views/Grid/GridItem'
+import GridItem from '@/views/layouts/grid/GridItem'
 export default {
     name:"List",
     props:{
@@ -67,5 +67,5 @@ export default {
 </script>
 
 <style scoped>
-    .list {position: relative;width:100%;max-width:900px;display:block;margin:0 auto;}
+    .list {position: relative;width:100%;max-width:1200px;display:block;margin:0 auto;}
 </style>
