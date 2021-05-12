@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
     .item {display: block;position: absolute;box-sizing: border-box;left : 0px;top : 0px;user-select: none;transform:translate3d(0px,0px,0px); z-index:1;padding:20px;}
-    .item a {display:block;width:100%;height:100%;background-color:#fff;border-radius: 10px;}
+    .item a {display:block;width:100%;height:100%;padding:15px;background-color:#fff;border-radius: 10px;box-sizing:border-box;}
     .item .project_name {font-size:1.6rem;}
     .animate {transition:all 0.5s ease;}
 </style>

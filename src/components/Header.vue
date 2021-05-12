@@ -1,7 +1,7 @@
 <template>
     <header class='header' :style="style">
         <div class="inner">
-            <h1>{{ headertitle }}</h1>
+            <h1 :style="translatetop">{{ headertitle }}</h1>
         </div>
     </header>
 </template>
@@ -23,17 +23,30 @@ export default {
                 }
             } else {
                 return {
-                    background:'red',
+                    background:'transparent',
                     height:200+'px',
                 }
             }
-        }
+        },
+        translatetop(){
+            if(this.headerdata == null){
+                return {
+                    fontSize:'2.4rem',
+                    transform:`translateY(${0}px)`,
+                }
+            } else {
+                return {
+                    fontSize:'3rem',
+                    transform:`translateY(${50}px)`,
+                }
+            }
+        },
     }
 }
 </script>
 
 <style scoped>
     .header {position:relative;top:0px;left:0px;width:100%;height:100px;background:#ccc;transition:all 0.5s ease;}
-    .header .inner {display:flex;align-items:center;width:100%;max-width:1200px;height:100%;margin:0 auto;}
-    .header h1 {font-size:2.4rem}
+    .header .inner {display:flex;align-items:center;width:100%;max-width:1200px;height:100%;margin:0 auto;padding:0 75px;box-sizing: border-box;}
+    .header h1 {font-size:2.4rem;transform:translateY(0px); transition:all 0.5s ease;}
 </style>
