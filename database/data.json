@@ -1,6 +1,6 @@
 [
     {"id":"1","project_name":"이보영의 토킹 클럽 ","type":"build","url":"http://www.talkingclub.co.kr","date":"2012.10-2012.11","year":"2012"},
-    {"id":"2","project_name":"서울학습도움센터 및 지역복지 네트워크","type":"build","url":"http://s-iam.sen.go.kr/user/index.do","date":"2012.12-2013.02","year":"2012"},
+    {"id":"2","project_name":"서울학습도움센터","type":"build","url":"http://s-iam.sen.go.kr/user/index.do","date":"2012.12-2013.02","year":"2012"},
     {"id":"3","project_name":"KT 전자도서관 올레 e북","type":"build","url":"http://ebook.olleh.com/main.dpp","date":"2013.03-2013.04","year":"2013"},
     {"id":"4","project_name":"LG U+ 웹모니터링 시스템","type":"build","url":"","date":"2013.05-2013.07","year":"2013"},
     {"id":"5","project_name":"흥국화재 웹표준 개편 작업","type":"build","url":"http://www.heungkukfire.co.kr","date":"2013.07-2013.09","year":"2013"},
