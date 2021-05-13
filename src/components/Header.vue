@@ -47,8 +47,8 @@ export default {
     .header .gnb li {display:inline-block;}
     .header .gnb li a {display:block;padding:5px 10px;font-size:1.6rem;color:#fff;}
     
-    .header.detailview {background-color:transparent;height:80px;}
-    .header.detailview h1 {color:#333;transform:translate3d(0,15px,0);}
+    .header.detailview {background-color:transparent;height:100px;}
+    .header.detailview h1 {color:#333;transform:translate3d(0,40px,0);}
     
     @media screen and (min-width: 550px) {
         .header {height:100px;background-color:transparent;}
