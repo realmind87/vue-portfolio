@@ -59,9 +59,7 @@ export default {
     .detail-wrapper {position: relative;width:100%;max-width:1160px;display:block;margin:0 auto;padding:30px;border-radius:10px;background-color:#fff;font-size:1.6rem;box-sizing:border-box;}
     .detail-wrapper h2 {font-size:2rem;}
     .detail-wrapper .btn-go-list {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;font-size:1.6rem;}
-
     .detail-wrapper .site-img-area {width:100%;height:500px;background-color:#757575;}
-
     .btn-go-list {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;}
     .detail-content {margin-top:30px;}
     .col-area {padding:10px 0px;}
