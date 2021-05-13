@@ -1,7 +1,11 @@
 <template>
     <li :class="className" :style="style">
         <a href="#" @click="showProjectDetail(item)">
+            <div class="thumbnail-link">
+
+            </div>
             <strong class='project_name'>{{ item.project_name }}</strong>
+            <p class='date-infor'>{{ item.year }}</p>
         </a>
     </li>
 </template>
@@ -66,8 +70,10 @@ export default {
 </script>
 
 <style scoped>
-    .item {display: block;position: absolute;box-sizing: border-box;left : 0px;top : 0px;user-select: none;transform:translate3d(0px,0px,0px); z-index:1;padding:20px;}
-    .item a {display:block;width:100%;height:100%;padding:15px;background-color:#fff;border-radius: 10px;box-sizing:border-box;}
-    .item .project_name {font-size:1.6rem;}
+    .item {display:block;position: absolute;box-sizing: border-box;left : 0px;top : 0px;user-select: none;transform:translate3d(0px,0px,0px); z-index:1;padding:20px;}
+    .item a { position: relative; display:block;width:100%;height:100%;padding:15px;background-color:#fff;border-radius: 5px;box-sizing:border-box;}
+    .item .project_name {font-size:1.6rem;line-height:1.2;}
     .animate {transition:all 0.5s ease;}
+    .item .thumbnail-link {height:130px;margin-bottom:15px;background-color:#888;}
+    .item .date-infor {position: absolute;left:20px;bottom:20px;font-size:1.4rem;color:#888;}
 </style>

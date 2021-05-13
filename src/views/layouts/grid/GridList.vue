@@ -33,8 +33,8 @@ export default {
     },
     data(){
         return {
-            cellWidth:180,
-            cellHeight:180,
+            cellWidth:300,
+            cellHeight:360,
             center:true,
             contentSize : 0,
         }

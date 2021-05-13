@@ -1,7 +1,15 @@
 <template>
     <header class='header' :style="style">
-        <div class="inner">
+        <div class='inner'>
             <h1 :style="translatetop">{{ headertitle }}</h1>
+            <div class='gnb' v-show="isNavigation">
+                <nav>
+                    <ul>
+                        <li><a href="#">2012</a></li>
+                        <li><a href="#">2013</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 </template>
@@ -16,35 +24,25 @@ export default {
             else return this.headerdata.project_name
         },
         style(){
-            if(this.headerdata == null) {
-                return {
-                    background:'#ccc',
-                    height:100+'px',
-                }
-            } else {
-                return {
-                    background:'transparent',
-                    height:200+'px',
-                }
-            }
+            if(this.headerdata != null) return {background:'transparent',height:200+'px',}
+            else return false 
         },
         translatetop(){
-            if(this.headerdata == null){
-                return {
-                    transform:`translateY(${0}px)`,
-                }
-            } else {
-                return {
-                    transform:`translateY(${50}px)`,
-                }
-            }
+            if(this.headerdata != null) return { color:'#333', transform:`translate3d(${0},${60}px,${0})`}
+            else return false;
         },
+        isNavigation(){
+            if(this.headerdata != null) return false
+            else return true;
+        }
     }
 }
 </script>
 
 <style scoped>
-    .header {position:relative;top:0px;left:0px;width:100%;height:100px;background:#ccc;transition:all 0.5s ease;}
-    .header .inner {display:flex;align-items:center;width:100%;max-width:1200px;height:100%;margin:0 auto;padding:0 10px;box-sizing: border-box;}
-    .header h1 {font-size:2.4rem;transform:translateY(0px); transition:all 0.5s ease;}
+    .header {position:relative;top:0px;left:0px;width:100%;height:80px;background:#000;transition:all 0.5s ease;}
+    .header .inner {display:flex;align-items:center;width:100%;max-width:1160px;height:100%;justify-content:space-between; margin:0 auto;box-sizing: border-box;}
+    .header h1 {font-size:2.4rem;color:#fff;transform:translate3d(0,0,0);transition:all 0.5s ease;}
+    .header .gnb li {display:inline-block;}
+    .header .gnb li a {display:block;padding:20px;font-size:2rem;color:#fff;}
 </style>
