@@ -67,5 +67,9 @@ export default {
 </script>
 
 <style scoped>
-    .list {position: relative;width:100%;max-width:1200px;display:block;margin:0 auto;}
+    .list {position: relative;width:100%;max-width:1200px;display:block;margin:70px auto 0;}
+    
+    @media screen and (min-width: 550px) {
+        .list {padding-top:0px;}
+    }
 </style>

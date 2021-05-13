@@ -40,18 +40,18 @@ export default {
 <style scoped>
 
     /* mobile */
-    .header {position:relative;width:100%;height:64px;background-color:#333;transition:all 0.5s ease;}
+    .header {position:fixed;top:0px;left:0px;width:100%;height:64px;background-color:#333;transition:all 0.5s ease;z-index: 1000;}
     .header .inner {position:relative;padding:20px;width:100%;max-width:1160px;height:100%;margin:0 auto;box-sizing: border-box;}
     .header h1 {font-size:2.4rem;color:#fff;transform:translate3d(0,0,0);transition:all 0.5s ease;}
     .header .gnb {display:none;}
     .header .gnb li {display:inline-block;}
     .header .gnb li a {display:block;padding:5px 10px;font-size:1.6rem;color:#fff;}
     
-    .header.detailview {background-color:transparent;height:100px;}
+    .header.detailview {position:relative;background-color:transparent;height:100px;}
     .header.detailview h1 {color:#333;transform:translate3d(0,40px,0);}
     
     @media screen and (min-width: 550px) {
-        .header {height:100px;background-color:transparent;}
+        .header {position:relative;height:100px;background-color:transparent;}
         .header .inner {padding:60px 0px 0px;}
         .header h1 {color:#333;}
         .header .gnb {display:block;position:absolute;right:0px;top:60px;}
