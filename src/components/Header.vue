@@ -31,12 +31,10 @@ export default {
         translatetop(){
             if(this.headerdata == null){
                 return {
-                    fontSize:'2.4rem',
                     transform:`translateY(${0}px)`,
                 }
             } else {
                 return {
-                    fontSize:'3rem',
                     transform:`translateY(${50}px)`,
                 }
             }
@@ -47,6 +45,6 @@ export default {
 
 <style scoped>
     .header {position:relative;top:0px;left:0px;width:100%;height:100px;background:#ccc;transition:all 0.5s ease;}
-    .header .inner {display:flex;align-items:center;width:100%;max-width:1200px;height:100%;margin:0 auto;padding:0 75px;box-sizing: border-box;}
+    .header .inner {display:flex;align-items:center;width:100%;max-width:1200px;height:100%;margin:0 auto;padding:0 10px;box-sizing: border-box;}
     .header h1 {font-size:2.4rem;transform:translateY(0px); transition:all 0.5s ease;}
 </style>
