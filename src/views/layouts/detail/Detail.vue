@@ -43,7 +43,7 @@ export default {
             style : {
                 width:260+'px',
                 height:320+'px',
-                left:this.offsetX+'px',
+                left:this.offsetX+'px ',
                 top:this.offsetY+'px',
             },
             isContent:false,
@@ -69,7 +69,7 @@ export default {
         },
         showDetail(){
             this.style = {
-                width:1160+'px',
+                width:100+'%',
                 height:1000+'px',
             }
             this.isContent = true;
