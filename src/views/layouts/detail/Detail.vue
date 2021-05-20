@@ -41,7 +41,7 @@ export default {
     data(){
         return {
             style : {
-                maxWidth:260+'px',
+                width:260+'px',
                 height:320+'px',
                 transform:`translate3d(${this.offsetX}px, ${this.offsetY+20}px, 0)`,
             },
@@ -68,7 +68,7 @@ export default {
         },
         showDetail(){
             this.style = {
-                maxWidth:1160+'px',
+                width:1160+'px',
                 height:1000+'px',
                 transform:`translate3d(0px, 20px, 0)`,
             }
@@ -82,7 +82,7 @@ export default {
 
 <style scoped>
     .detail-wrapper {position: relative;width:100%;max-width:1160px;display:block;margin:0 auto;}
-    .detail-wrapper .item {position: absolute;top:0;left:0;width:100%;padding:40px;transform-origin: 50% 50%;  background-color:#fff;border-radius: 5px;box-sizing:border-box; transition: all 0.5s ease; }
+    .detail-wrapper .item {position: absolute;top:0;left:0;padding:40px;transform-origin: 50% 50%;  background-color:#fff;border-radius: 5px;box-sizing:border-box; transition: all 0.5s ease; }
     .detail-wrapper h2 {font-size:2rem;}
     .detail-wrapper .btn-go-list {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;font-size:1.6rem;}
     .detail-wrapper .site-img-area {width:100%;height:300px;margin-top:20px;background-color:#757575;}
