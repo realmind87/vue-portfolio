@@ -4,12 +4,10 @@
       <Header :headerdata="headerdata" />
       <div class='container'>
         <div id="content">
-          <transition name="layout-fade">
             <component
-              :is="layout" 
+              :is="layout"
               :portfolio="portfolios"
             />
-          </transition>
         </div>
       </div>
     </div>
@@ -18,40 +16,31 @@
 <script>
 import Data from '../database/data.json'
 import Header from '@/components/Header'
-import * as layouts from '@/views/layouts'
+import Grid from '@/views/layouts/grid/GridList';
 
 export default {
   name: 'App',
   data(){
     return {
       portfolios : Data,
-      layoutType : 'Grid',
+      layout : Grid,
       headerdata : null,
     }
   },
   components : {
-    ...layouts,
-    Header
-  },
-  computed:{
-    layout(){
-      return this.layoutType
-    }
+    Header,
+    Grid,
   },
   created(){
-    this.$EventBus.$on("showProjectDetail", this.getProjectDetail);
-    this.$EventBus.$on("backToList", this.getProjectList);
+    this.$EventBus.$on('showProjectDetail', this.onHeader);
+    this.$EventBus.$on('backToList', this.onBackHeader);
   },
   methods : {
-    getProjectDetail(project){
+    onHeader(project){
       this.headerdata = project;
-      this.portfolios = project;
-      this.layoutType = "Detail"
     },
-    getProjectList(){
+    onBackHeader(){
       this.headerdata = null;
-      this.portfolios = Data;
-      this.layoutType = "Grid"
     }
   }
 }
@@ -60,13 +49,4 @@ export default {
 <style>
   @import url('assets/css/reset.css');
   @import url('assets/css/layout.css');
-
-  .layout-fade-enter-active,
-  .layout-fade-leave-acgtive {
-    transition: all 0.3s ease;
-  }  
-  .layout-fade-enter,
-  .layout-fade-leave-to {
-    opacity: 0;
-  }
 </style>

@@ -33,6 +33,9 @@ export default {
             if(this.headerdata != null) return true
             else return false;
         }
+    },
+    mounted(){
+        console.log( this.headerdata );
     }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
     <li :class="className" :style="style">
-        <a href="#" @click="showProjectDetail(item)">
+        <a href="#" @click="showProjectDetail(item,top,left)">
             <div class="thumbnail-link">
-
+                
             </div>
             <strong class='project_name'>{{ item.project_name }}</strong>
             <p class='date-infor'>{{ item.year }}</p>
@@ -12,12 +12,6 @@
 
 <script>
 export default {
-    data(){
-        return {
-            zIndex : 1,
-            opacity : 0, 
-        }
-    },
     props:{
         item : {
             type : Object
@@ -41,6 +35,12 @@ export default {
             type : Number
         }
     },
+    data(){
+        return {
+            zIndex : 1,
+            opacity : 0,
+        }
+    },
     computed : {
         className(){
             return 'item animate'
@@ -62,8 +62,8 @@ export default {
         }
     },
     methods : {
-        showProjectDetail(project){
-            this.$EventBus.$emit("showProjectDetail", project)
+        showProjectDetail(project,top,left){
+            this.$EventBus.$emit("showProjectDetail", project,top,left);
         }
     }
 }
