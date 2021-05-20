@@ -43,7 +43,8 @@ export default {
             style : {
                 width:260+'px',
                 height:320+'px',
-                transform:`translate3d(${this.offsetX}px, ${this.offsetY+20}px, 0)`,
+                left:this.offsetX+'px',
+                top:this.offsetY+'px',
             },
             isContent:false,
         }
