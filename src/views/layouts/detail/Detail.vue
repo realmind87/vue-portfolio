@@ -70,7 +70,6 @@ export default {
             this.style = {
                 width:1160+'px',
                 height:1000+'px',
-                transform:`translate3d(0px, 20px, 0)`,
             }
             this.isContent = true;
             
