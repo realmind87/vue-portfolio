@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="wrap">
+    <div id="wrap" :class="{view:isView,scroll:isScroll}">
       <Header :headerdata="headerdata" />
       <div class='container'>
         <div id="content">
@@ -17,15 +17,17 @@
 import Data from '../database/data.json'
 import Header from '@/components/Header'
 import Grid from '@/views/layouts/grid/GridList';
-
 export default {
   name: 'App',
   data(){
     return {
-      portfolios : Data,
-      layout : Grid,
-      headerdata : null,
-    }
+		portfolios:Data,
+		layout:Grid,
+		headerdata:null,
+		isView:false,
+		isScroll:false,
+		timer:null,
+	}
   },
   components : {
     Header,
@@ -37,11 +39,24 @@ export default {
   },
   methods : {
     onHeader(project){
-      this.headerdata = project;
+		this.isView = true;
+		this.headerdata = project;
+		this.setScrollEvent();
+	
     },
     onBackHeader(){
-      this.headerdata = null;
-    }
+		this.isView = false;
+		this.headerdata = null;
+		this.removeScrollEvent();
+    },
+	setScrollEvent(){
+		this.timer = setTimeout(() => {
+			this.isScroll = true;
+		}, 600);
+	},
+	removeScrollEvent(){
+		this.isScroll = false;
+	}
   }
 }
 </script>

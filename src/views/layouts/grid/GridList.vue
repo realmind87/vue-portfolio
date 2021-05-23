@@ -1,28 +1,30 @@
 <template>
-    <div class="list" :style="style">
-        <transition name='layout-fade'>
-            <ul v-show="isGrid">
-                <GridItem
-                    v-for="(project , index) in portfolio"
-                    :item="project"
-                    :key="index"
-                    :index="index"
-                    :sort="index"
-                    :cell-width="cellWidth"
-                    :cell-height="cellHeight"
-                    :row-count="rowCount"
-                    :row-shift="rowShift"
-                >
-                </GridItem>
-            </ul>
-        </transition>
-        <component
-            :is="detail"
-            :project="item"
-            :offsetX="left"
-            :offsetY="top"
-        ></component>
-    </div>
+	<div class="s-body">
+		<transition name='layout-fade'>
+			<div class="list" v-show="isGrid" :style="style"> <!-- v-show="isGrid" -->
+				<ul>
+					<GridItem
+						v-for="(project , index) in portfolio"
+						:item="project"
+						:key="index"
+						:index="index"
+						:sort="index"
+						:cell-width="cellWidth"
+						:cell-height="cellHeight"
+						:row-count="rowCount"
+						:row-shift="rowShift"
+					>
+					</GridItem>
+				</ul>
+			</div>
+		</transition>
+		<component
+			:is="detail"
+			:project="item"
+			:offsetX="left"
+			:offsetY="top"
+		></component>
+	</div>
 </template>
 
 <script>
@@ -90,7 +92,6 @@ export default {
             this.item = project;
             this.top=top;
             this.left=left;
-            console.log(this.item);
         },
         backToList(){
             this.isGrid = true;
@@ -102,17 +103,13 @@ export default {
 </script>
 
 <style scoped>
-    .list {position: relative;width:100%;max-width:1200px;display:block;margin:70px auto 0;}
     .layout-fade-enter-active,
-    .layout-fade-leave-active {
-        transition: all 0.5s ease;
-    }  
+    .layout-fade-leave-active {transform: translateY(0);transition: all 0.5s ease;}  
     .layout-fade-enter,
-    .layout-fade-leave-to {
-        opacity: 0;
-    }
-    
+    .layout-fade-leave-to {opacity: 0; transform: translateY(50px); }
+	.s-body {position: relative;width:100%;max-width:1200px;display:block;margin:0px auto 0;}
+	.list {margin-top:64px;}
     @media screen and (min-width: 550px) {
-        .list {margin-top:0px;}
+        .list {margin-top:64px;}
     }
 </style>
