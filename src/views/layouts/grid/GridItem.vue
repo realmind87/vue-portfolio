@@ -44,7 +44,7 @@ export default {
             opacity : 0,
 			x : 0,
 			y : 0,
-
+			scrollY : 0,
         }
     },
     computed : {
@@ -69,14 +69,15 @@ export default {
     },
     methods : {
         showProjectDetail(item,left){
+			
 			if( window.innerWidth > 1200 ){
 				this.x = left
-				this.y = this.$el.getBoundingClientRect().top + (20 - 140);
+				this.y = this.$el.getBoundingClientRect().top + (20 - 78);
 			} else {
 				this.x = this.$el.getBoundingClientRect().left + 20;
-				this.y = this.$el.getBoundingClientRect().top + (20 - 100);
+				this.y = this.$el.getBoundingClientRect().top + (20 - 64);
 			}
-            this.$EventBus.$emit("showProjectDetail",item,this.y,this.x);
+            this.$EventBus.$emit("showProjectDetail",item, this.y, this.x);
         }
     }
 }

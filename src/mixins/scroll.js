@@ -14,7 +14,7 @@ export default {
 	},
 	methods : {
 		scrollEvent(){
-			this.scrollTop = window.scrollY;
+			this.scrollTop = window.pageYOffset;
 		}
 	}
 }

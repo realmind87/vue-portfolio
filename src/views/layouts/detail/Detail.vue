@@ -39,6 +39,9 @@ export default {
         offsetY : {
             type : Number
         },
+		scrollTop : {
+			type : Number
+		}
     },
     data(){
         return {
@@ -48,6 +51,7 @@ export default {
                 left:this.offsetX+'px ',
                 top:this.offsetY+'px',
             },
+			scTop : this.scrollTop,
             isContent:false,
 			isScroll:false,
         }
@@ -63,10 +67,19 @@ export default {
     },
     mounted(){
         this.showDetail();
+		console.log( this.scTop );
     },
     methods : {
         backToList(){
-            this.$EventBus.$emit("backToList");
+			this.style = {
+                width:260+'px',
+                height:320+'px',
+                left:this.offsetX+'px ',
+                top:this.offsetY+'px',
+				transition:`all 0.5s ease`,
+            }
+			this.isContent = false;
+            this.$EventBus.$emit("backToList",this.scTop);
         },
         showDetail(){
             this.style = {
@@ -80,10 +93,11 @@ export default {
 }
 </script>
 <style scoped>
-    .d-wrapper {position:fixed;width:100%;height:100%;left:0px;right:0px;top:100px;overflow-y:hidden;z-index:1000;}
-	.scroll .d-wrapper {position:relative;top:0px;}
-	.scroll .d-wrapper .item {position:relative;}
-	.d-wrapper .d-container {position: relative;width:100%;max-width:1160px;display:block;margin:0 auto;}
+    .d-wrapper {position:fixed;width:100%;height:100%;left:0px;right:0px;top:64px;z-index:1000;}
+	.view .d-wrapper .item {top:47px;}
+	.view.scroll .d-wrapper {position:relative;top:0px;}
+	.view.scroll .d-wrapper .item {position:relative;top:0px;transition:none;}
+	.d-wrapper .d-container {position: relative;width:100%;max-width:1160px;display:block;margin:0 auto;padding:10px 0;}
     .d-wrapper .item {position: absolute;top:0;left:0;padding:20px;transform-origin: 50% 50%; background-color:#fff;box-shadow: 0 0 10px rgba(0,0,0,0.2);border-radius: 5px;box-sizing:border-box; transition: all 0.5s ease; }
     .d-wrapper .d-container h2 {font-size:2rem;}
     .d-wrapper .d-container .btn-go-list {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;font-size:1.6rem;}
@@ -95,15 +109,17 @@ export default {
     .d-container .col-area .btn-link {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;font-size:1.6rem;}
     .d-container .col-area .none-link {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#efefef;color:#333;font-size:1.6rem;}
     .d-container .col-area .data-txt {display:inline-block;margin-left:5px;font-size:1.8rem;color:#757575;}
-    .content-fade-enter-active,
-    .content-fade-leave-active {transition: all 0.5s ease;transition-delay: 0.5s;}  
+    .content-fade-enter-active {transition: all 0.5s ease;transition-delay: 0.5s;}
+    /* .content-fade-leave-active {transition: all 0.5s ease;transition-delay: 0.5s;}   */
     .content-fade-enter,
     .content-fade-leave-to {opacity: 0;}
 	@media screen and (min-width: 550px) {
 		.d-wrapper .item {padding:40px;}
+		.d-wrapper .d-container {width:100%;}
         .d-wrapper .d-container .site-img-area {height: 400px;}
     }
 	@media screen and (min-width: 1200px) {
-		.d-wrapper {top:140px;}
+		.d-wrapper {top:78px;}
+		.view .d-wrapper .item {top:74px;}
 	}
 </style>

@@ -1,0 +1,45 @@
+                <script>
+                
+                var topMove = new Vue({
+                    el : '#topMove',
+                    data : {
+                        defaultTop : '200',
+                        getTop : '0',
+                        bullet: '▼',
+                        isActive: false,
+                        dir: '아래로'
+                    },
+                    mounted : function(){ // vue 준비시 실행
+                        this.getWindow();
+                    },
+                    watch : { // 실시간으로 getTop의 수치를 체크
+                        getTop : function(scNumber){
+                            if(scNumber > this.defaultTop){
+                                this.isActive = true;
+                                this.bullet = '▲';
+                                this.dir = '위로';
+                            }else{
+                                this.isActive = false;
+                                this.bullet = '▼';
+                                this.dir = '아래로';
+                            }
+                        }
+                    },
+                    methods : {
+                        gotoTop:function(){ // 위아래로 이동 메소드
+                            if(this.isActive){
+                                $('body,html').stop().animate({scrollTop:0},500)
+                            }else{
+                                $('body,html').stop().animate({scrollTop:2000},500)
+                            }
+                        },
+                        getWindow:function(){ //스크롤시 getTop에 수치를 반영
+                            $(window).on('scroll',function(){
+                                topMove.getTop = $(window).scrollTop();
+                            });
+                        }
+                    }
+                })
+                </script>
+                
+            

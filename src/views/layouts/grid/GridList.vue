@@ -23,12 +23,14 @@
 			:project="item"
 			:offsetX="left"
 			:offsetY="top"
+			:scrollTop="scrollTop"
 		></component>
 	</div>
 </template>
 
 <script>
 import windowSize from '@/mixins/resize.js'
+import windowScroll from '@/mixins/scroll.js'
 import GridItem from '@/views/layouts/grid/GridItem';
 import Detail from '@/views/layouts/detail/Detail';
 
@@ -39,7 +41,7 @@ export default {
             type:Array
         },
     },
-    mixins : [windowSize],
+    mixins : [windowSize,windowScroll],
     components:{
         GridItem,
         Detail
@@ -56,6 +58,7 @@ export default {
             left:0,
             top:0,
             timer:null,
+			offsetTop:0,
         }
     },
     computed : {
@@ -79,11 +82,12 @@ export default {
                             ? ( this.gridResponsiveWidth - contentWidth ) / 2
                             : ( this.gridResponsiveWidth % this.cellWidth ) / 2
             return Math.floor(rowShift);
-        }
+        },
     },
     created(){
         this.$EventBus.$on('showProjectDetail', this.onProjectDetail);
         this.$EventBus.$on('backToList', this.backToList);
+		window.scroll({top:400});
     },
     methods : {
         onProjectDetail(project,top,left){
@@ -93,23 +97,27 @@ export default {
             this.top=top;
             this.left=left;
         },
-        backToList(){
+        backToList(scrollY){
+			this.timer = setTimeout(() => {
+				this.detail = null;
+				clearTimeout(this.timer);
+			}, 500);
+			window.requestAnimationFrame(()=>{
+				window.scroll(0,scrollY)
+			});
             this.isGrid = true;
-            this.detail = null;
-        }
-    }
-    
+        },
+    },
 }
 </script>
 
 <style scoped>
-    .layout-fade-enter-active,
-    .layout-fade-leave-active {transform: translateY(0);transition: all 0.5s ease;}  
+    .layout-fade-enter-active {transition: all 1s ease;}  
     .layout-fade-enter,
-    .layout-fade-leave-to {opacity: 0; transform: translateY(50px); }
+    .layout-fade-leave-to {opacity: 0; }
 	.s-body {position: relative;width:100%;max-width:1200px;display:block;margin:0px auto 0;}
 	.list {margin-top:64px;}
     @media screen and (min-width: 550px) {
-        .list {margin-top:64px;}
+        .list {margin-top:90px;}
     }
 </style>
