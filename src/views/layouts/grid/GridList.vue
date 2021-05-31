@@ -27,7 +27,6 @@
 		></component>
 	</div>
 </template>
-
 <script>
 import windowSize from '@/mixins/resize.js'
 import windowScroll from '@/mixins/scroll.js'
@@ -110,7 +109,6 @@ export default {
     },
 }
 </script>
-
 <style scoped>
     .layout-fade-enter-active {transition: all 1s ease;}  
     .layout-fade-enter,

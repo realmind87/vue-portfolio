@@ -69,13 +69,12 @@ export default {
     },
     methods : {
         showProjectDetail(item,left){
-			
 			if( window.innerWidth > 1200 ){
 				this.x = left
-				this.y = this.$el.getBoundingClientRect().top + (20 - 78);
+				this.y = this.$el.getBoundingClientRect().top + 20;
 			} else {
 				this.x = this.$el.getBoundingClientRect().left + 20;
-				this.y = this.$el.getBoundingClientRect().top + (20 - 64);
+				this.y = this.$el.getBoundingClientRect().top + 20;
 			}
             this.$EventBus.$emit("showProjectDetail",item, this.y, this.x);
         }

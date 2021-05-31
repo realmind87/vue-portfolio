@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="wrap" :class="{view:isView,scroll:isScroll}">
-      <Header :headerdata="headerdata" />
+      <Header />
       <div class='container'>
         <div id="content">
             <component
@@ -42,7 +42,6 @@ export default {
 		this.isView = true;
 		this.headerdata = project;
 		this.setScrollEvent();
-	
     },
     onBackHeader(){
 		this.isView = false;
@@ -60,7 +59,6 @@ export default {
   }
 }
 </script>
-
 <style>
   @import url('assets/css/reset.css');
   @import url('assets/css/layout.css');
