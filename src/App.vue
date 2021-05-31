@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="wrap" :class="{view:isView,scroll:isScroll}">
-      <Header />
+      <Header :portfolios="portfolios" />
       <div class='container'>
         <div id="content">
             <component
@@ -23,7 +23,6 @@ export default {
     return {
 		portfolios:Data,
 		layout:Grid,
-		headerdata:null,
 		isView:false,
 		isScroll:false,
 		timer:null,
@@ -36,16 +35,15 @@ export default {
   created(){
     this.$EventBus.$on('showProjectDetail', this.onHeader);
     this.$EventBus.$on('backToList', this.onBackHeader);
+	this.$EventBus.$on('showCurrentYears', this.showCurrentYears);
   },
   methods : {
-    onHeader(project){
+    onHeader(){
 		this.isView = true;
-		this.headerdata = project;
 		this.setScrollEvent();
     },
     onBackHeader(){
 		this.isView = false;
-		this.headerdata = null;
 		this.removeScrollEvent();
     },
 	setScrollEvent(){
@@ -55,6 +53,17 @@ export default {
 	},
 	removeScrollEvent(){
 		this.isScroll = false;
+	},
+	showCurrentYears( year ){
+		let years = [];
+		if( year == 'All' ) {
+			this.portfolios = Data;
+		} else {
+			years = Data.filter((item)=>{
+				return item.year == year
+			});
+			this.portfolios = years;
+		}
 	}
   }
 }

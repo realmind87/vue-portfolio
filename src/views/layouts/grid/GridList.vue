@@ -2,7 +2,8 @@
 	<div class="s-body">
 		<transition name='layout-fade'>
 			<div class="list" v-show="isGrid" :style="style"> <!-- v-show="isGrid" -->
-				<ul>
+
+				<transition-group name="list-fade" tag="ul">
 					<GridItem
 						v-for="(project , index) in portfolio"
 						:item="project"
@@ -15,7 +16,7 @@
 						:row-shift="rowShift"
 					>
 					</GridItem>
-				</ul>
+				</transition-group>
 			</div>
 		</transition>
 		<component
@@ -39,6 +40,10 @@ export default {
         portfolio : {
             type:Array
         },
+		center : {
+			type:Boolean,
+			default:true,
+		}
     },
     mixins : [windowSize,windowScroll],
     components:{
@@ -50,7 +55,6 @@ export default {
             isGrid:true,
             cellWidth:300,
             cellHeight:360,
-            center:true,
             contentSize : 0,
             detail:null,
             item:null,
@@ -76,17 +80,21 @@ export default {
             return Math.floor(this.gridResponsiveWidth / this.cellWidth);
         },
         rowShift(){
-            let contentWidth = this.portfolio.length * this.cellWidth;
-            let rowShift = contentWidth < this.gridResponsiveWidth 
-                            ? ( this.gridResponsiveWidth - contentWidth ) / 2
-                            : ( this.gridResponsiveWidth % this.cellWidth ) / 2
-            return Math.floor(rowShift);
+
+			if(this.center){
+				let contentWidth = this.portfolio.length * this.cellWidth;
+				let rowShift = contentWidth < this.gridResponsiveWidth 
+								? ( this.gridResponsiveWidth - contentWidth ) / 2
+								: ( this.gridResponsiveWidth % this.cellWidth ) / 2
+				return Math.floor(rowShift);
+			}
+
+			return 0;
         },
     },
     created(){
         this.$EventBus.$on('showProjectDetail', this.onProjectDetail);
         this.$EventBus.$on('backToList', this.backToList);
-		window.scroll({top:400});
     },
     methods : {
         onProjectDetail(project,top,left){
@@ -115,6 +123,9 @@ export default {
     .layout-fade-leave-to {opacity: 0; }
 	.s-body {position: relative;width:100%;max-width:1200px;display:block;margin:0px auto 0;}
 	.list {margin-top:64px;}
+	.list-fade-enter-active {transition: all 0.5s ease;}
+    .list-fade-enter,
+    .list-fade-leave-to {opacity: 0;}
     @media screen and (min-width: 550px) {
         .list {margin-top:90px;}
     }

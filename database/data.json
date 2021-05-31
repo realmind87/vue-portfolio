@@ -1,23 +1,191 @@
 [
-    {"id":"1","project_name":"이보영의 토킹 클럽 ","type":"build","url":"http://www.talkingclub.co.kr","date":"2012.10-2012.11","year":"2012"},
-    {"id":"2","project_name":"서울학습도움센터","type":"build","url":"http://s-iam.sen.go.kr/user/index.do","date":"2012.12-2013.02","year":"2012"},
-    {"id":"3","project_name":"KT 전자도서관 올레 e북","type":"build","url":"http://ebook.olleh.com/main.dpp","date":"2013.03-2013.04","year":"2013"},
-    {"id":"4","project_name":"LG U+ 웹모니터링 시스템","type":"build","url":"","date":"2013.05-2013.07","year":"2013"},
-    {"id":"5","project_name":"흥국화재 웹표준 개편 작업","type":"build","url":"http://www.heungkukfire.co.kr","date":"2013.07-2013.09","year":"2013"},
-    {"id":"6","project_name":"경기도 경기 농정 통합 포털","type":"build","url":"http://farm.gg.go.kr","date":"2013.09-2013.10","year":"2013"},
-    {"id":"7","project_name":"기상 레이더 센터","type":"build","url":"http://radar.kma.go.kr/index.do","date":"2013.11-2014.01","year":"2013"},
-	{"id":"8","project_name":"아폴로 픽쳐스","type":"build","url":"http://www.apollopictures.co.kr/","date":"2014.02 ~ 2014.04","year":"2014"},
-	{"id":"9","project_name":"동부CNI웹접근성개편 작업","type":"build","url":"https://www.dbinc.co.kr/","date":"2014.05 ~ 2014.06","year":"2014"},
-	{"id":"10","project_name":"서울우유협동조합","type":"build","url":"http://www.seoulmilk.co.kr/enterprise/main.sm","date":"2014.06 ~ 2014.08","year":"2014"},
-	{"id":"11","project_name":"서울우유 VIP 홍보대사","type":"build","url":"http://www.seoulmilk.co.kr/loyal/vip/index.sm","date":"2014.09 ~ 2014.12","year":"2014"},
-	{"id":"12","project_name":"생명보험협회 자격시험 접근성 개선","type":"build","url":"https://exam.insure.or.kr/","date":"2015.01 ~ 2015.04","year":"2015"},
-	{"id":"13","project_name":"에스트라","type":"build","url":"http://www.aestura-dermacare.com/index.do","date":"2015.05 ~ 2015.08","year":"2015"},
-	{"id":"14","project_name":"에스원","type":"build","url":"https://www.s1.co.kr/index.do","date":"2015.08 ~ 2016.01","year":"2016"},
-	{"id":"15","project_name":"삼성 SDS edutto 솔루션","type":"build","url":"","date":"2016.03 ~ 2016.12","year":"2016"},
-	{"id":"16","project_name":"삼성 SDS Nexshop Traning 구축 및 운영","type":"build","url":"","date":"2017.03 ~ 2018.03","year":"2017"},
-	{"id":"17","project_name":"신한 쉐어드 플랫폼 통합 구축","type":"build","url":"","date":"2018.05 ~ 2018.08","year":"2018"},
-	{"id":"18","project_name":"삼성헬스케어","type":"build","url":"","date":"2018.10 ~ 2019.03","year":"2019"},
-	{"id":"19","project_name":"삼성 웰스토리몰 사이트 리뉴얼","type":"build","url":"https://www.welstorymall.com/","date":"2019.04 ~ 2019.05","year":"2019"},
-	{"id":"20","project_name":"KB차차차","type":"build","url":"https://www.kbchachacha.com/public/main.kbc","date":"2019.06 ~ 2019.08","year":"2019"},
-	{"id":"21","project_name":"삼성카드 운영","type":"build","url":"https://www.samsungcard.com/personal/main/UHPPCO0101M0.jsp","date":"2019.08 ~ 진행중","year":"2021"}
+    {
+		"id":"1",
+		"project_name":"이보영의 토킹 클럽",
+		"type":"build", 
+		"work":"퍼블리싱", 
+		"url":"http://www.talkingclub.co.kr",
+		"date":"2012.10-2012.11",
+		"year":"2012"
+	},
+    {
+		"id":"2",
+		"project_name":"서울학습도움센터",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://s-iam.sen.go.kr/user/index.do",
+		"date":"2012.12-2013.02",
+		"year":"2012"
+	},
+    {
+		"id":"3",
+		"project_name":"KT 전자도서관 올레 e북",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://ebook.olleh.com/main.dpp",
+		"date":"2013.03-2013.04",
+		"year":"2013"
+	},
+    {
+		"id":"4",
+		"project_name":"LG U+ 웹모니터링 시스템",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"",
+		"date":"2013.05-2013.07",
+		"year":"2013"
+	},
+    {
+		"id":"5",
+		"project_name":"흥국화재 웹표준 개편 작업",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://www.heungkukfire.co.kr",
+		"date":"2013.07-2013.09",
+		"year":"2013"
+	},
+    {
+		"id":"6",
+		"project_name":"경기도 경기 농정 통합 포털",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://farm.gg.go.kr",
+		"date":"2013.09-2013.10",
+		"year":"2013"
+	},
+    {
+		"id":"7",
+		"project_name":"기상 레이더 센터",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://radar.kma.go.kr/index.do",
+		"date":"2013.11-2014.01",
+		"year":"2013"
+	},
+	{
+		"id":"8",
+		"project_name":"아폴로 픽쳐스",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://www.apollopictures.co.kr/",
+		"date":"2014.02 ~ 2014.04",
+		"year":"2014"
+	},
+	{
+		"id":"9",
+		"project_name":"동부CNI웹접근성개편 작업",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"https://www.dbinc.co.kr/",
+		"date":"2014.05 ~ 2014.06",
+		"year":"2014"
+	},
+	{
+		"id":"10",
+		"project_name":"서울우유협동조합",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://www.seoulmilk.co.kr/enterprise/main.sm",
+		"date":"2014.06 ~ 2014.08",
+		"year":"2014"
+	},
+	{
+		"id":"11",
+		"project_name":"서울우유 VIP 홍보대사",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://www.seoulmilk.co.kr/loyal/vip/index.sm",
+		"date":"2014.09 ~ 2014.12",
+		"year":"2014"
+	},
+	{
+		"id":"12",
+		"project_name":"생명보험협회 자격시험 접근성 개선",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"https://exam.insure.or.kr/",
+		"date":"2015.01 ~ 2015.04",
+		"year":"2015"
+	},
+	{
+		"id":"13",
+		"project_name":"에스트라",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"http://www.aestura-dermacare.com/index.do",
+		"date":"2015.05 ~ 2015.08",
+		"year":"2015"
+	},
+	{
+		"id":"14",
+		"project_name":"에스원",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"https://www.s1.co.kr/index.do",
+		"date":"2015.08 ~ 2016.01",
+		"year":"2016"
+	},
+	{
+		"id":"15",
+		"project_name":"삼성 SDS edutto 솔루션",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"",
+		"date":"2016.03 ~ 2016.12",
+		"year":"2016"
+	},
+	{
+		"id":"16",
+		"project_name":"삼성 SDS Nexshop Traning 구축 및 운영",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"",
+		"date":"2017.03 ~ 2018.03",
+		"year":"2017"
+	},
+	{
+		"id":"17",
+		"project_name":"신한 쉐어드 플랫폼 통합 구축",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"",
+		"date":"2018.05 ~ 2018.08",
+		"year":"2018"
+	},
+	{
+		"id":"18",
+		"project_name":"삼성헬스케어",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"",
+		"date":"2018.10 ~ 2019.03",
+		"year":"2019"
+	},
+	{
+		"id":"19",
+		"project_name":"삼성 웰스토리몰 사이트 리뉴얼",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"https://www.welstorymall.com/",
+		"date":"2019.04 ~ 2019.05",
+		"year":"2019"
+	},
+	{
+		"id":"20",
+		"project_name":"KB차차차",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"https://www.kbchachacha.com/public/main.kbc",
+		"date":"2019.06 ~ 2019.08",
+		"year":"2019"
+	},
+	{
+		"id":"21",
+		"project_name":"삼성카드 운영",
+		"type":"build",
+		"work":"퍼블리싱",
+		"url":"https://www.samsungcard.com/personal/main/UHPPCO0101M0.jsp",
+		"date":"2019.08 ~ 진행중",
+		"year":"2021"
+	}
 ]

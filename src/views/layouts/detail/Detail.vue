@@ -2,7 +2,11 @@
     <div class="d-wrapper">
 		<div class="d-container">
 			<article class="item" :style="style">            
-				<transition name="content-fade">
+				<transition 
+					name="content-fade"
+					@after-enter="afterEnter"
+					@leave-cancelled="leaveCancelled"
+				>
 					<div class="detail-content" ref="content" v-show="isContent">
 						<a class="btn-go-list" @click="backToList" href="#"><i class="fas fa-times-circle"></i></a>
 						<div class="site-img-area">
@@ -10,8 +14,12 @@
 						</div>
 						<article class="info">
 							<h2>{{ project.project_name }}</h2>
+							
 							<div class="col-area">
 								<span class="data-txt">{{ project.date }}</span>
+							</div>
+							<div class="col-area">
+								<p class="work">{{project.work}}</p>
 							</div>
 							<div class="col-area">
 								<a v-if="btnlink" class='btn-link' :title="linktitle" target="_blank" :href="project.url">링크</a>
@@ -82,18 +90,29 @@ export default {
             this.$EventBus.$emit("backToList",this.scTop);
         },
         showDetail(){
-			console.log( this.$refs.content.clientHeight );
             this.style = {
                 width:100+'%',
-				height:window.innerHeight+"px",
+				height:100+'%',
             }
             this.isContent = true;
         },
-		beforeEnter(el){
-			console.log(el);
-		},
 		afterEnter(){
-			console.log(this.$refs.content.clientHeight);
+			const content_height = this.$refs.content.clientHeight;
+			const window_height = window.innerHeight;
+			if( window_height < content_height ){
+				this.style = {
+					width:100+'%',
+					height:content_height+'px',
+				}
+			} else {
+				this.style = {
+					width:100+'%',
+					height:100+'%',
+				}
+			}
+		},
+		leaveCancelled(){
+			console.log('leave');
 		}
     }
 }
@@ -110,6 +129,7 @@ export default {
 	.d-wrapper .d-container .site-img-area {display:flex;justify-content:center;align-items:center;width:100%;height:300px;background-color:#efefef;}
     .d-wrapper .d-container .site-img-area .noData {font-size:10rem;color:#888;}
 	.d-wrapper .d-container .detail-content .info {padding:30px 20px;}
+	.d-wrapper .d-container .detail-content .work {font-size:1.6rem;}
     .d-container .col-area {padding:10px 0px;}
     .d-container .col-area .tit {margin-bottom:5px;font-weight:normal;font-size:3rem;}
     .d-container .col-area .btn-link {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;font-size:1.6rem;}
