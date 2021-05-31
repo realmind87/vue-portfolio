@@ -2,8 +2,7 @@
 	<div class="s-body">
 		<transition name='layout-fade'>
 			<div class="list" v-show="isGrid" :style="style"> <!-- v-show="isGrid" -->
-
-				<transition-group name="list-fade" tag="ul">
+				<ul>
 					<GridItem
 						v-for="(project , index) in portfolio"
 						:item="project"
@@ -16,7 +15,7 @@
 						:row-shift="rowShift"
 					>
 					</GridItem>
-				</transition-group>
+				</ul>
 			</div>
 		</transition>
 		<component
@@ -80,16 +79,11 @@ export default {
             return Math.floor(this.gridResponsiveWidth / this.cellWidth);
         },
         rowShift(){
-
-			if(this.center){
-				let contentWidth = this.portfolio.length * this.cellWidth;
-				let rowShift = contentWidth < this.gridResponsiveWidth 
-								? ( this.gridResponsiveWidth - contentWidth ) / 2
-								: ( this.gridResponsiveWidth % this.cellWidth ) / 2
-				return Math.floor(rowShift);
-			}
-
-			return 0;
+			let contentWidth = this.portfolio.length * this.cellWidth;
+			let rowShift = contentWidth < this.gridResponsiveWidth 
+							? ( this.gridResponsiveWidth - contentWidth ) / 2
+							: ( this.gridResponsiveWidth % this.cellWidth ) / 2
+			return Math.floor(rowShift);
         },
     },
     created(){
