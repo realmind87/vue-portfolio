@@ -134,7 +134,7 @@ export default {
     .d-container .col-area .tit {margin-bottom:5px;font-weight:normal;font-size:3rem;}
     .d-container .col-area .btn-link {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#1473e6;color:#fff;font-size:1.6rem;}
     .d-container .col-area .none-link {display:block;width:70px;height:40px;text-align:center;line-height:43px;background-color:#efefef;color:#333;font-size:1.6rem;}
-    .d-container .col-area .data-txt {display:inline-block;margin-left:5px;font-size:1.8rem;color:#757575;}
+    .d-container .col-area .data-txt {display:inline-block;font-size:1.8rem;color:#757575;}
     .content-fade-enter-active {transition: all 0.5s ease;transition-delay: 0.5s;}
     .content-fade-enter,
     .content-fade-leave-to {opacity: 0;}
