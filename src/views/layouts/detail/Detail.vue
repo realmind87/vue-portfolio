@@ -5,7 +5,7 @@
 				<transition 
 					name="content-fade"
 					@after-enter="afterEnter"
-					@leave-cancelled="leaveCancelled"
+					@after-leave="afterLeave"
 				>
 					<div class="detail-content" ref="content" v-show="isContent">
 						<a class="btn-go-list" @click="backToList" href="#"><i class="fas fa-times-circle"></i></a>
@@ -111,8 +111,9 @@ export default {
 				}
 			}
 		},
-		leaveCancelled(){
-			console.log('leave');
+		afterLeave(){
+			console.log( document.body );
+			document.body.style.overflowY = "hidden"
 		}
     }
 }

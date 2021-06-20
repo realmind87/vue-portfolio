@@ -102,6 +102,7 @@ export default {
 			this.timer = setTimeout(() => {
 				this.detail = null;
 				clearTimeout(this.timer);
+				document.body.style.overflowY = "scroll"
 			}, 500);
 			window.requestAnimationFrame(()=>{
 				window.scroll(0,scrollY)
