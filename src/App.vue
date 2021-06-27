@@ -14,40 +14,47 @@
   </div>
 </template>
 <script>
-import Data from '../database/data.json'
-import Header from '@/components/Header'
+/* eslint-disable */
+import DB from '../database/data.json';
+import Header from '@/components/Header';
 import Grid from '@/views/layouts/grid/GridList';
+import { mapState } from 'vuex';
 export default {
   name: 'App',
   data(){
     return {
-		portfolios:Data,
-		layout:Grid,
-		isView:false,
-		isScroll:false,
-		timer:null,
-	}
+      portfolios: DB,
+      pureData: DB,
+	  	layout:Grid,
+      isView: false,
+      isScroll: false,
+      timer: null,
+	  }
   },
   components : {
     Header,
     Grid,
   },
+  computed: {
+    ...mapState({
+    })
+  },
   created(){
     this.$EventBus.$on('showProjectDetail', this.onHeader);
     this.$EventBus.$on('backToList', this.onBackHeader);
-	this.$EventBus.$on('showCurrentYears', this.showCurrentYears);
+	  this.$EventBus.$on('showCurrentYears', this.showCurrentYears);
   },
   methods : {
     onHeader(){
-		this.isView = true;
-		this.setScrollEvent();
+		  this.isView = true;
+		  this.setScrollEvent();
     },
     onBackHeader(){
-		this.isView = false;
-		this.removeScrollEvent();
+		  this.isView = false;
+		  this.removeScrollEvent();
     },
 	setScrollEvent(){
-		this.timer = setTimeout(() => {
+		  this.timer = setTimeout(() => {
 			this.isScroll = true;
 		}, 600);
 	},
@@ -57,9 +64,9 @@ export default {
 	showCurrentYears( year ){
 		let years = [];
 		if( year == 'All' ) {
-			this.portfolios = Data;
+			this.portfolios = this.pureData;
 		} else {
-			years = Data.filter((item)=>{
+			years = this.pureData.filter((item)=>{
 				return item.year == year
 			});
 			this.portfolios = years;

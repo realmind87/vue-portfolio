@@ -5,18 +5,20 @@ Vue.use(Vuex);
 
 const stroe = new Vuex.Store({
     state: {
-        data: DB
+        data: DB,
+        isView: false,
+        isScroll: false,
+        timer: null,
     },
     mutations: {
-        showDetailPage( state, payload ){
-            console.log( state );
-            console.log( payload.item );
-            console.log( payload.offsetX );
-            console.log( payload.offsetY );
+        onHeader(state,payload){
+            state.isView = payload.isView
         }
     },
     actions: {
-
+        onHeader({commit}, payload){
+            commit('onHeader', payload);
+        }
     }
 });
 
